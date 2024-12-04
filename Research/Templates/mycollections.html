@@ -1,0 +1,171 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% block title %} Product Discovery {% endblock %}
+{% block content %}
+
+
+        <!--start content-->
+        <main class="page-content">
+
+            <!---------------------- Collections Section ---------------------->
+          
+            
+            <section>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="mb-0">My Collections</h3>
+                    <button type="button" class="btn btn-primary">Create Collection</button>
+                </div>
+                <div class="row my-3">
+                    <div class="col-12 col-md-6">
+                        <label for="collectionselect" class="form-label mb-1">Select Collection</label>
+                        <select id="collectionselect" name="collection" class="form-select">
+                            <option selected>Open this select menu</option>
+                           
+                            {% if collections %}
+                            {% for Collection in collections %}
+                            
+                                <option value="{{Collection.collection_id}}">{{Collection.collection_name}}</option>
+                            {% endfor %}
+                            {% endif %}
+                        </select>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-12">
+                        <label for="searchProduct" class="form-label mb-1">Name :</label>
+                        <div class="input-group">
+                            <input id="searchProduct" type="search" class="form-control"
+                                placeholder="Enter Product Keyword">
+                            <button class="btn btn-primary" type="button"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col d-flex justify-content-between align-items-center">
+                        <p class="lead m-0" id="collectionName">Collection Name</p>
+                        <a type="button" class="btn btn-danger" id="DeleteCollectionBTN" href="#">Delete</a>
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col">
+                        <div class="table-responsive">
+                            <table class="table align-middle mb-0 bg-white border">
+                                <thead class="bg-light">
+                                    <tr>
+                                        <th>PRODUCT</th>
+                                        <th>BRAND NAME</th>
+                                        <th>CATEGORY</th>
+                                        <th>ADDED</th>
+                                        <th>ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="result">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    // Select the dropdown and result container
+                    const selectElement = document.getElementById("collectionselect");
+                    const resultElement = document.getElementById("result");
+                    const collectionNameElement = document.getElementById("collectionName");
+                    const DeleteCollectionBTN = document.getElementById("DeleteCollectionBTN");
+                
+                    function fetchData(collection) {
+                        fetch(`/collectionItems/${collection}`)
+                            .then((response) => {
+                                if (!response.ok) {
+                                    throw new Error("Network response was not ok");
+                                }
+                                return response.json(); // Assuming the response is JSON
+                            })
+                            .then((data) => {
+                                resultElement.innerHTML="";
+                                // let collectionsitems=JSON.parse(data, null, 2);
+                                console.log(data);
+                                data.forEach(function(collectionsitem) {
+                                    console.log(collectionsitem)
+                                    resultElement.innerHTML += `
+                                    <tr id="Product${collectionsitem.collection_item_id}">
+                                        <td >
+                                            <div class="d-flex align-items-center">
+                                                <a href="${collectionsitem.product_url}"><img src="${collectionsitem.image_url}" alt="Product Image" style="width: 70px; height: 70px" class="rounded-circle" /></a>
+                                                <div class="ms-3">
+                                                    <p class="fw-bold mb-1"><a href="${collectionsitem.product_url}">${collectionsitem.product_name}</a></p>
+                                                    <p class="text-muted mb-0">Seller Name: <span class="text-dark">${collectionsitem.seller_name}</span></p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p>${collectionsitem.brand_name}</p>
+                                        </td>
+                                        <td>
+                                            <p>-</p>
+                                        </td>
+                                        <td>14h ago</td>
+                                        <td>
+                                            <button type="button" onclick="DeleteCollectionItem(${collectionsitem.collection_item_id})" class="btn btn-danger btn-sm" >delete</button>
+                                        </td>
+                                        
+                                    </tr>
+                                    `;
+                                  });
+                            })
+                            .catch((error) => {
+                                resultElement.innerHTML = ``;
+                                console.error("no data:", error);
+                            });
+                    }
+                
+                    // Event listener for change on select element
+                    selectElement.addEventListener("change", (event) => {
+                        const selectedCollection = event.target.value; // Get the selected value
+                        const CollectionText = event.target.text; // Get the selected value
+                        collectionNameElement.innerText=CollectionText;
+                        DeleteCollectionBTN.href=`/DeleteCollection/${selectedCollection}`;
+                        fetchData(selectedCollection); // Fetch data based on selection
+                    });
+                });
+
+
+
+
+                function DeleteCollectionItem(collectionItemId){
+                    console.log("delete row");
+                    fetch(`/DeleteCollectionItem/${collectionItemId}`)
+                            .then((response) => {
+                                if (!response.ok) {
+                                    throw new Error("Network response was not ok");
+                                }
+                                return response.json(); // Assuming the response is JSON
+                            })
+                            .then((data) => {
+                                console.log(data.response);
+                                if(data.response=="Collection Item deleted"){
+                                    document.getElementById(`Product${collectionItemId}`).remove();
+                                }
+                            })
+                            .catch((error) => {
+                                console.error("no data:", error);
+                            });
+                    }
+            </script>
+
+
+        </main>
+        <!--end page main-->
+
+       
+
+    {% endblock %}

@@ -1,0 +1,1041 @@
+
+ [
+    {
+        "categoryId": "10000263",
+        "categoryName": "Test ID 2",
+        "level": "1",
+        "resultingCommission": "3.00",
+        "level1":[
+            {
+                "categoryId": "10000264",
+                "categoryName": "Test ID 2 Level 2",
+                "level": "2",
+                "resultingCommission": "5.00"
+            }
+        ]
+    },
+    {
+        "categoryId": "10000335",
+        "categoryName": "Bedding & Bath",
+        "level": "1",
+        "resultingCommission": "13.30",
+        "level1":[
+            {
+                "categoryId": "10000341",
+                "categoryName": "Bath",
+                "level": "2",
+                "resultingCommission": "14.00",
+                "level2":[
+                    {
+                        "categoryId": "10000381",
+                        "categoryName": "Bathroom Counter Storage",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000382",
+                        "categoryName": "Bathroom Mirrors",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000383",
+                        "categoryName": "Toilet Brushes",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000384",
+                        "categoryName": "Bathroom Scales",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000385",
+                        "categoryName": "Toilet Roll Holders",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000386",
+                        "categoryName": "Towel Rails & Warmers",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000387",
+                        "categoryName": "Toilet Covers",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000388",
+                        "categoryName": "Shower Curtains",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000389",
+                        "categoryName": "Shower Caddies & Hangers",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000390",
+                        "categoryName": "Bath Towels",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000391",
+                        "categoryName": "Bath Mats",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000392",
+                        "categoryName": "Bathrobes",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000393",
+                        "categoryName": "Linen Towers & Cabinets",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000394",
+                        "categoryName": "Bathroom Shelving",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    }
+                ]
+            },
+            {
+                "categoryId": "10000342",
+                "categoryName": "Bedding",
+                "level": "2",
+                "resultingCommission": "13.30",
+                "level2":[
+                    {
+                        "categoryId": "10000395",
+                        "categoryName": "Blankets & Throws",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000396",
+                        "categoryName": "Comforters, Quilts & Duvets",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000397",
+                        "categoryName": "Electric Blankets",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000398",
+                        "categoryName": "Pillows & Bolsters",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000399",
+                        "categoryName": "Pillow Cases",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000400",
+                        "categoryName": "Pillow Protectors",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000401",
+                        "categoryName": "Bed Runners & Skirts",
+                        "level": "3",
+                        "resultingCommission": "14.00"
+                    },
+                    {
+                        "categoryId": "10000402",
+                        "categoryName": "Bedding Accessories",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000403",
+                        "categoryName": "Bedding Sets",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000404",
+                        "categoryName": "Bed Sheets",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000405",
+                        "categoryName": "Mattress Pads",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000406",
+                        "categoryName": "Mattress Protectors",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "categoryId": "10000336",
+        "categoryName": "Furniture & Decor",
+        "level": "1",
+        "resultingCommission": "13.30",
+        "level1":[
+            {
+                "categoryId": "10000343",
+                "categoryName": "Furniture",
+                "level": "2",
+                "resultingCommission": "10.00",
+                "leve2":[
+                    {
+                        "categoryId": "10000407",
+                        "categoryName": "Bedroom Furniture",
+                        "level": "3",
+                        "resultingCommission": "10.00",
+                        "leve3":[
+                            {
+                                "categoryId": "10000731",
+                                "categoryName": "Beds",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000732",
+                                "categoryName": "Bedside Tables",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000733",
+                                "categoryName": "Dressers & Drawers",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000734",
+                                "categoryName": "Wardrobes",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000735",
+                                "categoryName": "Bed Ends",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000736",
+                                "categoryName": "Bedroom Ensembles & Sets",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000737",
+                                "categoryName": "Bed Headboards",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000738",
+                                "categoryName": "Mattresses",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryId": "10000408",
+                        "categoryName": "Living Room Furniture",
+                        "level": "3",
+                        "resultingCommission": "10.00",
+                        "leve3":[
+                            {
+                                "categoryId": "10000739",
+                                "categoryName": "Chairs",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000740",
+                                "categoryName": "Beanbag",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000741",
+                                "categoryName": "Massage Chairs",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000742",
+                                "categoryName": "Sofas",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000743",
+                                "categoryName": "Futons & Daybeds",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000744",
+                                "categoryName": "Coffee Tables",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000745",
+                                "categoryName": "Side Tables",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000746",
+                                "categoryName": "Console Tables",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000747",
+                                "categoryName": "Media & TV Storage",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000748",
+                                "categoryName": "Bookcases & Shelving",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000749",
+                                "categoryName": "Ottomans",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000811",
+                                "categoryName": "Sofa Covers & Slips",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryId": "10000409",
+                        "categoryName": "Kitchen & Dining Furniture",
+                        "level": "3",
+                        "resultingCommission": "10.00",
+                        "leve3":[
+                            {
+                                "categoryId": "10000750",
+                                "categoryName": "Dining Tables",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000751",
+                                "categoryName": "Bar Tables & Sets",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000752",
+                                "categoryName": "Bar Stools",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000753",
+                                "categoryName": "Wine & Drinks Cabinets",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000754",
+                                "categoryName": "Dining Chairs",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000755",
+                                "categoryName": "Dining Room Sets",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000756",
+                                "categoryName": "Sideboards & Buffets",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000757",
+                                "categoryName": "Kitchen Islands",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryId": "10000410",
+                        "categoryName": "Kids Furniture",
+                        "level": "3",
+                        "resultingCommission": "10.00",
+                        "leve3":[
+                            {
+                                "categoryId": "10000758",
+                                "categoryName": "Kids Tables & Sets",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000759",
+                                "categoryName": "Kids Chairs",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000760",
+                                "categoryName": "Kids Bookcases & Shelving",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000761",
+                                "categoryName": "Toy Boxes & Organisers",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000762",
+                                "categoryName": "Kids Wardrobes",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000763",
+                                "categoryName": "Kids Beds",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryId": "10000411",
+                        "categoryName": "Home Office Furniture",
+                        "level": "3",
+                        "resultingCommission": "10.00",
+                        "leve3":[
+                            {
+                                "categoryId": "10000764",
+                                "categoryName": "Home Office Desks",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000765",
+                                "categoryName": "Home Office Chairs",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000766",
+                                "categoryName": "Ergonomic Accessories",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000767",
+                                "categoryName": "Filing Cabinets & Office Stands",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000768",
+                                "categoryName": "Office Sets",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryId": "10000412",
+                        "categoryName": "Hallway & Entry Furniture",
+                        "level": "3",
+                        "resultingCommission": "10.00",
+                        "leve3":[
+                            {
+                                "categoryId": "10000769",
+                                "categoryName": "Coat Racks & Umbrella Stands",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000770",
+                                "categoryName": "Hall Stands & Shelving",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000771",
+                                "categoryName": "Storage Benches",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryId": "10000413",
+                        "categoryName": "Gaming Furniture",
+                        "level": "3",
+                        "resultingCommission": "10.00",
+                        "leve3":[
+                            {
+                                "categoryId": "10000772",
+                                "categoryName": "Gaming Tables",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000812",
+                                "categoryName": "Gaming Chairs",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryId": "10000414",
+                        "categoryName": "Outdoor Furniture",
+                        "level": "3",
+                        "resultingCommission": "10.00",
+                        "leve3":[
+                            {
+                                "categoryId": "10000773",
+                                "categoryName": "Outdoor Tables",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000774",
+                                "categoryName": "Outdoor Seating",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000775",
+                                "categoryName": "Outdoor Sets",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            },
+                            {
+                                "categoryId": "10000776",
+                                "categoryName": "Shades & Awnings",
+                                "level": "4",
+                                "resultingCommission": "10.00"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryId": "10000415",
+                        "categoryName": "Furniture Protectors & Parts",
+                        "level": "3",
+                        "resultingCommission": "10.00"
+                    }
+                ]
+            },
+            {
+                "categoryId": "10000344",
+                "categoryName": "Storage & Organisation",
+                "level": "2",
+                "resultingCommission": "13.30",
+                "leve2":[
+                    {
+                        "categoryId": "10000416",
+                        "categoryName": "Storage Bins & Baskets",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000417",
+                        "categoryName": "Shoe Organisers",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000418",
+                        "categoryName": "Space Savers",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000419",
+                        "categoryName": "Wardrobe Organisers",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000420",
+                        "categoryName": "Medicine & First Aid Storage",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000421",
+                        "categoryName": "Bike & Sports Racks",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000422",
+                        "categoryName": "Deck Boxes & Balcony Storage",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    }
+                ]
+            },
+            {
+                "categoryId": "10000345",
+                "categoryName": "Home Decor",
+                "level": "2",
+                "resultingCommission": "13.30",
+                "leve2":[
+                    {
+                        "categoryId": "10000423",
+                        "categoryName": "Cushions & Covers",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000424",
+                        "categoryName": "Mirrors",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000425",
+                        "categoryName": "Rugs & Carpets",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000426",
+                        "categoryName": "Wall Decor",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000427",
+                        "categoryName": "Wall Stickers & Decals",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000428",
+                        "categoryName": "Tapestries & Hangings",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000429",
+                        "categoryName": "Curtains",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000430",
+                        "categoryName": "Decorative Accents",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000431",
+                        "categoryName": "Vases & Vessels",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000432",
+                        "categoryName": "Decorative Bowls",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000433",
+                        "categoryName": "Picture Frames",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000434",
+                        "categoryName": "Candles & Candleholders",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000435",
+                        "categoryName": "Artificial Flowers & Plants",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000436",
+                        "categoryName": "Aromatherapy and Home Fragrance",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000437",
+                        "categoryName": "Room Dividers & Screens",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000438",
+                        "categoryName": "Decorative Door Stops",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000439",
+                        "categoryName": "Clocks",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000440",
+                        "categoryName": "Seasonal",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    }
+                ]
+            },
+            {
+                "categoryId": "10000372",
+                "categoryName": "Lighting",
+                "level": "2",
+                "resultingCommission": "13.30",
+                "leve2":[
+                    {
+                        "categoryId": "10000638",
+                        "categoryName": "Ceiling Lights",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000639",
+                        "categoryName": "Wall Lights & Sconces",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000640",
+                        "categoryName": "Table Lamps",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000641",
+                        "categoryName": "Floor Lamps",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000642",
+                        "categoryName": "Specialty Lighting",
+                        "level": "3",
+                        "resultingCommission": "14.00",
+                        "leve3":[
+                            {
+                                "categoryId": "10000804",
+                                "categoryName": "Fairy Lights",
+                                "level": "4",
+                                "resultingCommission": "15.50"
+                            },
+                            {
+                                "categoryId": "10000805",
+                                "categoryName": "Night Lights",
+                                "level": "4",
+                                "resultingCommission": "15.50"
+                            },
+                            {
+                                "categoryId": "10000806",
+                                "categoryName": "Book Lights",
+                                "level": "4",
+                                "resultingCommission": "15.50"
+                            },
+                            {
+                                "categoryId": "10000807",
+                                "categoryName": "Seasonal & Decorative",
+                                "level": "4",
+                                "resultingCommission": "15.50"
+                            },
+                            {
+                                "categoryId": "10000808",
+                                "categoryName": "Picture & Display Lights",
+                                "level": "4",
+                                "resultingCommission": "15.50"
+                            },
+                            {
+                                "categoryId": "10000809",
+                                "categoryName": "Billiard & Gaming Lights",
+                                "level": "4",
+                                "resultingCommission": "15.50"
+                            },
+                            {
+                                "categoryId": "10000810",
+                                "categoryName": "LED Strip Lighting",
+                                "level": "4",
+                                "resultingCommission": "15.50"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryId": "10000643",
+                        "categoryName": "Light Bulbs",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000644",
+                        "categoryName": "Lighting Fixtures & Components",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000645",
+                        "categoryName": "Lamp Shades",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    },
+                    {
+                        "categoryId": "10000646",
+                        "categoryName": "Bathroom Lighting",
+                        "level": "3",
+                        "resultingCommission": "15.00"
+                    },
+                    {
+                        "categoryId": "10000647",
+                        "categoryName": "Outdoor Lighting",
+                        "level": "3",
+                        "resultingCommission": "15.50"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "categoryId": "10000337",
+        "categoryName": "Tools, DIY & Outdoor",
+        "level": "1",
+        "resultingCommission": "12.90"
+
+
+
+
+
+        
+    },
+    {
+        "categoryId": "10000338",
+        "categoryName": "Laundry & Cleaning",
+        "level": "1",
+        "resultingCommission": "12.90"
+    },
+    {
+        "categoryId": "10000339",
+        "categoryName": "Kitchen & Dining",
+        "level": "1",
+        "resultingCommission": "13.30"
+    },
+    {
+        "categoryId": "10000340",
+        "categoryName": "Stationery & Craft",
+        "level": "1",
+        "resultingCommission": "4.30"
+    },
+    {
+        "categoryId": "10002958",
+        "categoryName": "Sample",
+        "level": "1",
+        "resultingCommission": "2.65"
+    },
+    {
+        "categoryId": "10002959",
+        "categoryName": "Special Digital Products",
+        "level": "1",
+        "resultingCommission": "2.65"
+    },
+    {
+        "categoryId": "10002960",
+        "categoryName": "Topup",
+        "level": "1",
+        "resultingCommission": "2.65"
+    },
+    {
+        "categoryId": "10002964",
+        "categoryName": "Service Product",
+        "level": "1",
+        "resultingCommission": "0.00"
+    },
+    {
+        "categoryId": "10003025",
+        "categoryName": "Test Product2",
+        "level": "1",
+        "resultingCommission": "15.00"
+    },
+    {
+        "categoryId": "10003038",
+        "categoryName": "Charity and Donation",
+        "level": "1",
+        "resultingCommission": "0.00"
+    },
+    {
+        "categoryId": "10282",
+        "categoryName": "Pet Supplies",
+        "level": "1",
+        "resultingCommission": "8.50"
+    },
+    {
+        "categoryId": "1438",
+        "categoryName": "Health & Beauty",
+        "level": "1",
+        "resultingCommission": "12.90"
+    },
+    {
+        "categoryId": "147",
+        "categoryName": "TV, Audio / Video, Gaming & Wearables",
+        "level": "1",
+        "resultingCommission": "8.60"
+    },
+    {
+        "categoryId": "1819",
+        "categoryName": "Fashion",
+        "level": "1",
+        "resultingCommission": "17.00"
+    },
+    {
+        "categoryId": "1902",
+        "categoryName": "Bags and Travel",
+        "level": "1",
+        "resultingCommission": "15.00"
+    },
+    {
+        "categoryId": "1970",
+        "categoryName": "Sports & Outdoors",
+        "level": "1",
+        "resultingCommission": "8.60"
+    },
+    {
+        "categoryId": "2",
+        "categoryName": "Mobiles & Tablets",
+        "level": "1",
+        "resultingCommission": "12.90"
+    },
+    {
+        "categoryId": "20000167",
+        "categoryName": "Packaging Material",
+        "level": "1",
+        "resultingCommission": "2.65"
+    },
+    {
+        "categoryId": "20000199",
+        "categoryName": "OPS Services",
+        "level": "1",
+        "resultingCommission": "2.65"
+    },
+    {
+        "categoryId": "240",
+        "categoryName": "Cameras",
+        "level": "1",
+        "resultingCommission": "5.10"
+    },
+    {
+        "categoryId": "275",
+        "categoryName": "Home Appliances",
+        "level": "1",
+        "resultingCommission": "4.00"
+    },
+    {
+        "categoryId": "3214",
+        "categoryName": "Motors",
+        "level": "1",
+        "resultingCommission": "8.60"
+    },
+    {
+        "categoryId": "3374",
+        "categoryName": "Media, Music & Books",
+        "level": "1",
+        "resultingCommission": "13.30"
+    },
+    {
+        "categoryId": "3752",
+        "categoryName": "Groceries",
+        "level": "1",
+        "resultingCommission": "3.40"
+    },
+    {
+        "categoryId": "54",
+        "categoryName": "Computers & Laptops",
+        "level": "1",
+        "resultingCommission": "8.60"
+    },
+    {
+        "categoryId": "62422201",
+        "categoryName": "Test Product （wont be seen in seller pls dont inactive)",
+        "level": "1",
+        "resultingCommission": "2.65"
+    },
+    {
+        "categoryId": "62470401",
+        "categoryName": "Kids' & Baby Fashion",
+        "level": "1",
+        "resultingCommission": "2.65"
+    },
+    {
+        "categoryId": "6684",
+        "categoryName": "Digital Goods",
+        "level": "1",
+        "resultingCommission": "9.50"
+    },
+    {
+        "categoryId": "7686",
+        "categoryName": "Watches Sunglasses Jewellery",
+        "level": "1",
+        "resultingCommission": "18.00"
+    },
+    {
+        "categoryId": "8706",
+        "categoryName": "Mother & Baby",
+        "level": "1",
+        "resultingCommission": "8.60"
+    },
+    {
+        "categoryId": "9067",
+        "categoryName": "Toys & Games",
+        "level": "1",
+        "resultingCommission": "8.60"
+    }
+]

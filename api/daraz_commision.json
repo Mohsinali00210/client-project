@@ -1,0 +1,1430 @@
+{
+    "success": true,
+    "data": [
+        {
+            "category_id": "10569",
+            "category_url": "motorcycle",
+            "commission": 10
+        },
+        {
+            "category_id": "10000972",
+            "category_url": "motorcycle-scooters",
+            "commission": 10
+        },
+        {
+            "category_id": "3228",
+            "category_url": "interior-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "3215",
+            "category_url": "automotive",
+            "commission": 10
+        },
+        {
+            "category_id": "10001035",
+            "category_url": "interior-exterior-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "3275",
+            "category_url": "tools-equipment",
+            "commission": 10
+        },
+        {
+            "category_id": "10000964",
+            "category_url": "auto-parts-spares",
+            "commission": 10
+        },
+        {
+            "category_id": "10000989",
+            "category_url": "motorcycle-riding-gear",
+            "commission": 10
+        },
+        {
+            "category_id": "10001229",
+            "category_url": "motorcycle-riding-gear-face-masks",
+            "commission": 10
+        },
+        {
+            "category_id": "10001211",
+            "category_url": "motorcycle-goggles",
+            "commission": 10
+        },
+        {
+            "category_id": "10000985",
+            "category_url": "motorcycle-parts-spares",
+            "commission": 10
+        },
+        {
+            "category_id": "10001181",
+            "category_url": "motorcycle-drivetrain-transmission",
+            "commission": 10
+        },
+        {
+            "category_id": "10001202",
+            "category_url": "motorcycle-covers",
+            "commission": 10
+        },
+        {
+            "category_id": "10000965",
+            "category_url": "automotive-exterior-vehicle-care",
+            "commission": 10
+        },
+        {
+            "category_id": "10000971",
+            "category_url": "car-electronics-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "10000969",
+            "category_url": "car-video",
+            "commission": 7
+        },
+        {
+            "category_id": "10001214",
+            "category_url": "motorcycle-helmets",
+            "commission": 10
+        },
+        {
+            "category_id": "10001213",
+            "category_url": "motorcycle-gloves",
+            "commission": 10
+        },
+        {
+            "category_id": "3374",
+            "category_url": "books-games-music",
+            "commission": 12
+        },
+        {
+            "category_id": "3375",
+            "category_url": "books-magazines",
+            "commission": 16
+        },
+        {
+            "category_id": "3586",
+            "category_url": "magazines",
+            "commission": 11
+        },
+        {
+            "category_id": "10000647",
+            "category_url": "outdoor-lighting",
+            "commission": 15.5
+        },
+        {
+            "category_id": "10000638",
+            "category_url": "ceiling-lights",
+            "commission": 14
+        },
+        {
+            "category_id": "10000434",
+            "category_url": "candles-candle-holders",
+            "commission": 17
+        },
+        {
+            "category_id": "10000424",
+            "category_url": "mirrors",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10000423",
+            "category_url": "cushions",
+            "commission": 20
+        },
+        {
+            "category_id": "10000431",
+            "category_url": "vases",
+            "commission": 11
+        },
+        {
+            "category_id": "10000339",
+            "category_url": "kitchen-dining",
+            "commission": 15
+        },
+        {
+            "category_id": "10000616",
+            "category_url": "kitchen-knives-accessories",
+            "commission": 20
+        },
+        {
+            "category_id": "10000369",
+            "category_url": "kitchen-organizer-storage",
+            "commission": 15
+        },
+        {
+            "category_id": "10000368",
+            "category_url": "kitchen-table-linens-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "10000367",
+            "category_url": "kitchen-tools-accessories",
+            "commission": 20
+        },
+        {
+            "category_id": "10000363",
+            "category_url": "dinnerware",
+            "commission": 15
+        },
+        {
+            "category_id": "10000338",
+            "category_url": "laundry-cleaning",
+            "commission": 15
+        },
+        {
+            "category_id": "10000535",
+            "category_url": "household-supplies",
+            "commission": 11
+        },
+        {
+            "category_id": "10000337",
+            "category_url": "home-improvement-tools",
+            "commission": 18
+        },
+        {
+            "category_id": "10000350",
+            "category_url": "security-system-hardware",
+            "commission": 12
+        },
+        {
+            "category_id": "10000343",
+            "category_url": "furniture",
+            "commission": 15.5
+        },
+        {
+            "category_id": "10000411",
+            "category_url": "office-furniture",
+            "commission": 20
+        },
+        {
+            "category_id": "10000409",
+            "category_url": "kitchen-dining-furniture",
+            "commission": 15
+        },
+        {
+            "category_id": "10000408",
+            "category_url": "living-room-furniture",
+            "commission": 20
+        },
+        {
+            "category_id": "10000407",
+            "category_url": "bedroom-furniture",
+            "commission": 20
+        },
+        {
+            "category_id": "10000396",
+            "category_url": "comforters-quilts",
+            "commission": 5
+        },
+        {
+            "category_id": "10000406",
+            "category_url": "bedding-mattress-pads-protectors",
+            "commission": 18
+        },
+        {
+            "category_id": "10000404",
+            "category_url": "bedsheets",
+            "commission": 11
+        },
+        {
+            "category_id": "10000402",
+            "category_url": "bedding-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "10000389",
+            "category_url": "shower-holders-hangers",
+            "commission": 17
+        },
+        {
+            "category_id": "10000391",
+            "category_url": "bath-mats-rugs",
+            "commission": 7
+        },
+        {
+            "category_id": "10000390",
+            "category_url": "bath-towels",
+            "commission": 18
+        },
+        {
+            "category_id": "10000340",
+            "category_url": "stationery-craft",
+            "commission": 6
+        },
+        {
+            "category_id": "10000377",
+            "category_url": "school-supplies",
+            "commission": 11
+        },
+        {
+            "category_id": "10000376",
+            "category_url": "art-supplies",
+            "commission": 8.5
+        },
+        {
+            "category_id": "10000375",
+            "category_url": "packaging-products",
+            "commission": 10
+        },
+        {
+            "category_id": "10000374",
+            "category_url": "paper-products",
+            "commission": 10
+        },
+        {
+            "category_id": "10000373",
+            "category_url": "writing-utensils",
+            "commission": 15
+        },
+        {
+            "category_id": "3652",
+            "category_url": "musical-instruments",
+            "commission": 9
+        },
+        {
+            "category_id": "3662",
+            "category_url": "guitar-bass-accessories-instruments",
+            "commission": 7
+        },
+        {
+            "category_id": "3656",
+            "category_url": "guitars",
+            "commission": 10.23
+        },
+        {
+            "category_id": "6684",
+            "category_url": "digital-goods",
+            "commission": 10.23
+        },
+        {
+            "category_id": "10002683",
+            "category_url": "home-services",
+            "commission": 11
+        },
+        {
+            "category_id": "2059",
+            "category_url": "racket-sports",
+            "commission": 10
+        },
+        {
+            "category_id": "2153",
+            "category_url": "badminton",
+            "commission": 8.6
+        },
+        {
+            "category_id": "4688",
+            "category_url": "sports-water-bottles",
+            "commission": 11
+        },
+        {
+            "category_id": "10001960",
+            "category_url": "travel-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "2620",
+            "category_url": "outdoor-activities",
+            "commission": 11
+        },
+        {
+            "category_id": "2921",
+            "category_url": "outdoor-recreation-fishing",
+            "commission": 11
+        },
+        {
+            "category_id": "2621",
+            "category_url": "camping-hiking",
+            "commission": 14
+        },
+        {
+            "category_id": "1971",
+            "category_url": "exercise-fitness",
+            "commission": 5
+        },
+        {
+            "category_id": "2017",
+            "category_url": "weights-accessories",
+            "commission": 10.15
+        },
+        {
+            "category_id": "1987",
+            "category_url": "cardio-training-equipment",
+            "commission": 9
+        },
+        {
+            "category_id": "2556",
+            "category_url": "cricket",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10094",
+            "category_url": "water-sports",
+            "commission": 7
+        },
+        {
+            "category_id": "10142",
+            "category_url": "swimming-goggles",
+            "commission": 10
+        },
+        {
+            "category_id": "10107",
+            "category_url": "diving-snorkeling",
+            "commission": 18
+        },
+        {
+            "category_id": "4844",
+            "category_url": "mens-sports",
+            "commission": 10
+        },
+        {
+            "category_id": "10001958",
+            "category_url": "men-sports-clothing-accessories",
+            "commission": 17
+        },
+        {
+            "category_id": "4811",
+            "category_url": "womens-sports",
+            "commission": 10
+        },
+        {
+            "category_id": "9536",
+            "category_url": "mobiles-tablets-accessories",
+            "commission": 13
+        },
+        {
+            "category_id": "9545",
+            "category_url": "mobiles-tablets-parts-tools",
+            "commission": 12
+        },
+        {
+            "category_id": "9543",
+            "category_url": "mobile-cases-covers",
+            "commission": 5
+        },
+        {
+            "category_id": "9537",
+            "category_url": "other-phone-tablet-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "10002950",
+            "category_url": "accessories-tablet",
+            "commission": 10
+        },
+        {
+            "category_id": "10002875",
+            "category_url": "phone-tablet-chargers",
+            "commission": 10
+        },
+        {
+            "category_id": "10002876",
+            "category_url": "bluetooth-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "10002943",
+            "category_url": "gaming-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "10002918",
+            "category_url": "gaming-controllers",
+            "commission": 8.6
+        },
+        {
+            "category_id": "5676",
+            "category_url": "computing-storage",
+            "commission": 6.1
+        },
+        {
+            "category_id": "108",
+            "category_url": "casing",
+            "commission": 9
+        },
+        {
+            "category_id": "118",
+            "category_url": "processor",
+            "commission": 10
+        },
+        {
+            "category_id": "113",
+            "category_url": "computer-graphic-cards",
+            "commission": 5
+        },
+        {
+            "category_id": "89",
+            "category_url": "other-computer-accessories",
+            "commission": 14
+        },
+        {
+            "category_id": "7536",
+            "category_url": "wearable-technology",
+            "commission": 11
+        },
+        {
+            "category_id": "7538",
+            "category_url": "fitness-trackers",
+            "commission": 7.5
+        },
+        {
+            "category_id": "9794",
+            "category_url": "virtual-reality",
+            "commission": 7
+        },
+        {
+            "category_id": "128",
+            "category_url": "routers",
+            "commission": 7.5
+        },
+        {
+            "category_id": "124",
+            "category_url": "access-points",
+            "commission": 10
+        },
+        {
+            "category_id": "78",
+            "category_url": "computing-peripherals-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "5642",
+            "category_url": "computer-towers",
+            "commission": 5
+        },
+        {
+            "category_id": "10002880",
+            "category_url": "pc-audio",
+            "commission": 10
+        },
+        {
+            "category_id": "10451",
+            "category_url": "computer-adapters",
+            "commission": 5
+        },
+        {
+            "category_id": "10002136",
+            "category_url": "groceries-baking-cooking-cooking-ingredients",
+            "commission": 4.21
+        },
+        {
+            "category_id": "10002430",
+            "category_url": "whole-spices-seeds-herbs",
+            "commission": 6
+        },
+        {
+            "category_id": "10002427",
+            "category_url": "groceries-baking-cooking-cooking-ingredients-seasoning",
+            "commission": 4.21
+        },
+        {
+            "category_id": "7238",
+            "category_url": "beverages",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10002159",
+            "category_url": "groceries-beverages-soft-drinks",
+            "commission": 6.82
+        },
+        {
+            "category_id": "7221",
+            "category_url": "canned-packaged-foods",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10002142",
+            "category_url": "groceries-canned-dry-packaged-food-instant-ready-to-eat",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10002143",
+            "category_url": "groceries-canned-dry-packaged-food-grains-beans-pulses",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10002135",
+            "category_url": "groceries-baking-cooking-home-baking-sugar",
+            "commission": 6.5
+        },
+        {
+            "category_id": "7205",
+            "category_url": "breakfast",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10002137",
+            "category_url": "groceries-breakfast-jams-honey-spreads",
+            "commission": 7.5
+        },
+        {
+            "category_id": "7206",
+            "category_url": "cereal",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10282",
+            "category_url": "pet-supplies-shop",
+            "commission": 8.5
+        },
+        {
+            "category_id": "10286",
+            "category_url": "dogs-supplies",
+            "commission": 11
+        },
+        {
+            "category_id": "10367",
+            "category_url": "cats-supplies",
+            "commission": 8.5
+        },
+        {
+            "category_id": "3752",
+            "category_url": "groceries",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10002126",
+            "category_url": "groceries-wines-beers-spirits-beer",
+            "commission": 7.5
+        },
+        {
+            "category_id": "7185",
+            "category_url": "laundry-and-home-care",
+            "commission": 15
+        },
+        {
+            "category_id": "10002132",
+            "category_url": "groceries-laundry-household-dishwashing",
+            "commission": 9
+        },
+        {
+            "category_id": "10002134",
+            "category_url": "groceries-laundry-household-aircare",
+            "commission": 9
+        },
+        {
+            "category_id": "10002128",
+            "category_url": "laundry-products",
+            "commission": 6
+        },
+        {
+            "category_id": "10002129",
+            "category_url": "groceries-laundry-household-pest-control",
+            "commission": 9
+        },
+        {
+            "category_id": "20000437",
+            "category_url": "like-new-phone",
+            "commission": 5
+        },
+        {
+            "category_id": "240",
+            "category_url": "camera",
+            "commission": 9
+        },
+        {
+            "category_id": "244",
+            "category_url": "instant-camera",
+            "commission": 15
+        },
+        {
+            "category_id": "255",
+            "category_url": "camcorders",
+            "commission": 9
+        },
+        {
+            "category_id": "256",
+            "category_url": "camera-accessories",
+            "commission": 9
+        },
+        {
+            "category_id": "10002953",
+            "category_url": "security-cameras",
+            "commission": 12
+        },
+        {
+            "category_id": "10002951",
+            "category_url": "gaming-consoles",
+            "commission": 8.6
+        },
+        {
+            "category_id": "102",
+            "category_url": "computer-monitors",
+            "commission": 5
+        },
+        {
+            "category_id": "7",
+            "category_url": "tablets",
+            "commission": 11
+        },
+        {
+            "category_id": "5638",
+            "category_url": "computer-all-in-ones",
+            "commission": 5
+        },
+        {
+            "category_id": "276",
+            "category_url": "small-kitchen-appliances",
+            "commission": 11
+        },
+        {
+            "category_id": "9496",
+            "category_url": "water-purifiers-filters-accessories",
+            "commission": 12
+        },
+        {
+            "category_id": "288",
+            "category_url": "electric-kettles-thermo-pots",
+            "commission": 11
+        },
+        {
+            "category_id": "320",
+            "category_url": "specialty-cookware-appliances",
+            "commission": 11
+        },
+        {
+            "category_id": "305",
+            "category_url": "juicers",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10000332",
+            "category_url": "water-dispensers",
+            "commission": 7
+        },
+        {
+            "category_id": "10000282",
+            "category_url": "toasters",
+            "commission": 9
+        },
+        {
+            "category_id": "8359",
+            "category_url": "fryers",
+            "commission": 7.5
+        },
+        {
+            "category_id": "275",
+            "category_url": "cooking-appliances",
+            "commission": 11
+        },
+        {
+            "category_id": "10000316",
+            "category_url": "refrigerators",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10000313",
+            "category_url": "washing-machines",
+            "commission": 10
+        },
+        {
+            "category_id": "357",
+            "category_url": "cooling-heating",
+            "commission": 14
+        },
+        {
+            "category_id": "370",
+            "category_url": "heaters",
+            "commission": 9
+        },
+        {
+            "category_id": "10000303",
+            "category_url": "portable-ac",
+            "commission": 10
+        },
+        {
+            "category_id": "10000301",
+            "category_url": "air-conditioners",
+            "commission": 0
+        },
+        {
+            "category_id": "380",
+            "category_url": "floorcare-appliances",
+            "commission": 11
+        },
+        {
+            "category_id": "10000312",
+            "category_url": "vacuum-bags-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "373",
+            "category_url": "ironing-laundry-appliances",
+            "commission": 11
+        },
+        {
+            "category_id": "10000270",
+            "category_url": "sewing-machines",
+            "commission": 10
+        },
+        {
+            "category_id": "148",
+            "category_url": "consumer-electronics",
+            "commission": 12
+        },
+        {
+            "category_id": "7496",
+            "category_url": "portable-speakers",
+            "commission": 10
+        },
+        {
+            "category_id": "7485",
+            "category_url": "live-sound-stage",
+            "commission": 8
+        },
+        {
+            "category_id": "10002907",
+            "category_url": "gaming-headsets",
+            "commission": 10
+        },
+        {
+            "category_id": "190",
+            "category_url": "dvd-players",
+            "commission": 9
+        },
+        {
+            "category_id": "154",
+            "category_url": "headphones-headsets",
+            "commission": 10
+        },
+        {
+            "category_id": "181",
+            "category_url": "mp3-players-ipods",
+            "commission": 5
+        },
+        {
+            "category_id": "9717",
+            "category_url": "audio-home-entertainment",
+            "commission": 10
+        },
+        {
+            "category_id": "147",
+            "category_url": "televisions",
+            "commission": 4
+        },
+        {
+            "category_id": "9809",
+            "category_url": "tv-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "9812",
+            "category_url": "projectors",
+            "commission": 7.5
+        },
+        {
+            "category_id": "9810",
+            "category_url": "tv-receivers",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10001928",
+            "category_url": "mens-bags",
+            "commission": 17
+        },
+        {
+            "category_id": "10001947",
+            "category_url": "men-bags-backpacks",
+            "commission": 15
+        },
+        {
+            "category_id": "1782",
+            "category_url": "mens-clothing",
+            "commission": 17
+        },
+        {
+            "category_id": "10001966",
+            "category_url": "mens-polo-shirts",
+            "commission": 17
+        },
+        {
+            "category_id": "1783",
+            "category_url": "men-sweaters-cardigans",
+            "commission": 17
+        },
+        {
+            "category_id": "1803",
+            "category_url": "mens-casual-tops",
+            "commission": 5
+        },
+        {
+            "category_id": "1796",
+            "category_url": "men-clothing-suits-ties",
+            "commission": 17
+        },
+        {
+            "category_id": "6593",
+            "category_url": "fashion-boys",
+            "commission": 20
+        },
+        {
+            "category_id": "6594",
+            "category_url": "boys-shoes",
+            "commission": 16.5
+        },
+        {
+            "category_id": "6619",
+            "category_url": "boys-clothing",
+            "commission": 17
+        },
+        {
+            "category_id": "6612",
+            "category_url": "fashion-boys-accessories",
+            "commission": 20
+        },
+        {
+            "category_id": "1873",
+            "category_url": "men-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "4154",
+            "category_url": "mens-gloves",
+            "commission": 7
+        },
+        {
+            "category_id": "9693",
+            "category_url": "mens-socks",
+            "commission": 7
+        },
+        {
+            "category_id": "1886",
+            "category_url": "men-accessories-hats",
+            "commission": 10.15
+        },
+        {
+            "category_id": "1885",
+            "category_url": "fashion-mens-belts",
+            "commission": 17
+        },
+        {
+            "category_id": "1804",
+            "category_url": "clothing-men-underwear",
+            "commission": 17
+        },
+        {
+            "category_id": "10002031",
+            "category_url": "mens-boxers",
+            "commission": 8.6
+        },
+        {
+            "category_id": "1805",
+            "category_url": "mens-briefs",
+            "commission": 7
+        },
+        {
+            "category_id": "10001010",
+            "category_url": "eyeglasses",
+            "commission": 7
+        },
+        {
+            "category_id": "10001253",
+            "category_url": "womens-eyeglasses",
+            "commission": 11
+        },
+        {
+            "category_id": "10001669",
+            "category_url": "womens-rings",
+            "commission": 7
+        },
+        {
+            "category_id": "10001667",
+            "category_url": "womens-bangles-bracelets",
+            "commission": 5
+        },
+        {
+            "category_id": "10001666",
+            "category_url": "womens-pendants",
+            "commission": 11
+        },
+        {
+            "category_id": "7762",
+            "category_url": "mens-watches",
+            "commission": 7
+        },
+        {
+            "category_id": "7756",
+            "category_url": "womens-watches",
+            "commission": 7
+        },
+        {
+            "category_id": "5668",
+            "category_url": "womens-business-watches-wsj",
+            "commission": 18
+        },
+        {
+            "category_id": "10001688",
+            "category_url": "mens-fashion-bracelets",
+            "commission": 20
+        },
+        {
+            "category_id": "10001690",
+            "category_url": "mens-rings",
+            "commission": 7
+        },
+        {
+            "category_id": "10001250",
+            "category_url": "womens-sunglasses",
+            "commission": 11
+        },
+        {
+            "category_id": "10001927",
+            "category_url": "womens-bags",
+            "commission": 17
+        },
+        {
+            "category_id": "10001944",
+            "category_url": "wallets-accessories",
+            "commission": 10.15
+        },
+        {
+            "category_id": "10001942",
+            "category_url": "womens-backpacks",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10002970",
+            "category_url": "womens-traditional-clothing",
+            "commission": 17
+        },
+        {
+            "category_id": "10002976",
+            "category_url": "womens-shalwar-kameez",
+            "commission": 17
+        },
+        {
+            "category_id": "10002977",
+            "category_url": "womens-kurtis",
+            "commission": 7
+        },
+        {
+            "category_id": "10002978",
+            "category_url": "womens-sarees",
+            "commission": 7
+        },
+        {
+            "category_id": "10002971",
+            "category_url": "womens-lawn",
+            "commission": 11
+        },
+        {
+            "category_id": "10003005",
+            "category_url": "womens-party-wear",
+            "commission": 7.5
+        },
+        {
+            "category_id": "10253",
+            "category_url": "womens-lingerie-sleepwear",
+            "commission": 17
+        },
+        {
+            "category_id": "10263",
+            "category_url": "lingerie-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "10260",
+            "category_url": "womens-lingerie",
+            "commission": 11
+        },
+        {
+            "category_id": "10255",
+            "category_url": "womens-panties",
+            "commission": 11
+        },
+        {
+            "category_id": "10254",
+            "category_url": "womens-bras",
+            "commission": 9
+        },
+        {
+            "category_id": "10259",
+            "category_url": "women-robes",
+            "commission": 7
+        },
+        {
+            "category_id": "1766",
+            "category_url": "womens-shoes",
+            "commission": 17
+        },
+        {
+            "category_id": "4124",
+            "category_url": "mens-formal-shoes",
+            "commission": 7
+        },
+        {
+            "category_id": "1777",
+            "category_url": "womens-wedges",
+            "commission": 17
+        },
+        {
+            "category_id": "1774",
+            "category_url": "womens-flat-shoes",
+            "commission": 17
+        },
+        {
+            "category_id": "1779",
+            "category_url": "womens-boots",
+            "commission": 17
+        },
+        {
+            "category_id": "1769",
+            "category_url": "womens-flats-sandals",
+            "commission": 17
+        },
+        {
+            "category_id": "1767",
+            "category_url": "womens-heels",
+            "commission": 17
+        },
+        {
+            "category_id": "9670",
+            "category_url": "mens-slip-ons",
+            "commission": 7
+        },
+        {
+            "category_id": "1817",
+            "category_url": "mens-boots",
+            "commission": 17
+        },
+        {
+            "category_id": "1811",
+            "category_url": "mens-sneakers",
+            "commission": 7
+        },
+        {
+            "category_id": "1738",
+            "category_url": "womens-clothing",
+            "commission": 17
+        },
+        {
+            "category_id": "10001964",
+            "category_url": "womens-hoodies-sweatshirts",
+            "commission": 17
+        },
+        {
+            "category_id": "10002974",
+            "category_url": "womens-party-wear",
+            "commission": 7.5
+        },
+        {
+            "category_id": "4339",
+            "category_url": "womens-jeans",
+            "commission": 11
+        },
+        {
+            "category_id": "4466",
+            "category_url": "women-jackets-coats",
+            "commission": 17
+        },
+        {
+            "category_id": "4428",
+            "category_url": "womens-pants-trousers",
+            "commission": 11
+        },
+        {
+            "category_id": "1740",
+            "category_url": "womens-dresses",
+            "commission": 20
+        },
+        {
+            "category_id": "9640",
+            "category_url": "clothing-shorts",
+            "commission": 17
+        },
+        {
+            "category_id": "6554",
+            "category_url": "fashion-girls",
+            "commission": 20
+        },
+        {
+            "category_id": "6580",
+            "category_url": "baby-girls-clothing",
+            "commission": 17
+        },
+        {
+            "category_id": "6574",
+            "category_url": "fashion-girls-accessories",
+            "commission": 20
+        },
+        {
+            "category_id": "6555",
+            "category_url": "girls-shoes",
+            "commission": 17
+        },
+        {
+            "category_id": "1848",
+            "category_url": "womens-accessories",
+            "commission": 20
+        },
+        {
+            "category_id": "4160",
+            "category_url": "womens-gloves",
+            "commission": 7
+        },
+        {
+            "category_id": "1852",
+            "category_url": "women-hair-accessories",
+            "commission": 20
+        },
+        {
+            "category_id": "1523",
+            "category_url": "makeup-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "1440",
+            "category_url": "bath-body-accessories",
+            "commission": 20
+        },
+        {
+            "category_id": "1646",
+            "category_url": "mens-grooming",
+            "commission": 8.5
+        },
+        {
+            "category_id": "10002071",
+            "category_url": "mens-shaving-grooming",
+            "commission": 14
+        },
+        {
+            "category_id": "1628",
+            "category_url": "health-beauty-tools",
+            "commission": 14.5
+        },
+        {
+            "category_id": "1637",
+            "category_url": "hair-removal-appliances",
+            "commission": 11
+        },
+        {
+            "category_id": "1606",
+            "category_url": "hair-care-accessories",
+            "commission": 20
+        },
+        {
+            "category_id": "10002066",
+            "category_url": "hair-conditioner",
+            "commission": 0
+        },
+        {
+            "category_id": "1580",
+            "category_url": "fragrances",
+            "commission": 14.5
+        },
+        {
+            "category_id": "10002063",
+            "category_url": "womens-fragrance",
+            "commission": 11
+        },
+        {
+            "category_id": "10002064",
+            "category_url": "mens-fragrance",
+            "commission": 14.5
+        },
+        {
+            "category_id": "1565",
+            "category_url": "health-supplements",
+            "commission": 8.5
+        },
+        {
+            "category_id": "4771",
+            "category_url": "beauty-supplements",
+            "commission": 8.5
+        },
+        {
+            "category_id": "7280",
+            "category_url": "face-wash",
+            "commission": 9
+        },
+        {
+            "category_id": "7279",
+            "category_url": "mens-face",
+            "commission": 11
+        },
+        {
+            "category_id": "1819",
+            "category_url": "womens-fashion-watches-wsj",
+            "commission": 17.0
+        },
+        {
+            "category_id": "1687",
+            "category_url": "health-care",
+            "commission": 13.63
+        },
+        {
+            "category_id": "5289",
+            "category_url": "health-monitors-tests",
+            "commission": 17
+        },
+        {
+            "category_id": "1690",
+            "category_url": "first-aid-supplies",
+            "commission": 8.5
+        },
+        {
+            "category_id": "1682",
+            "category_url": "personal-care",
+            "commission": 14.5
+        },
+        {
+            "category_id": "10518",
+            "category_url": "sexual-wellness",
+            "commission": 14.5
+        },
+        {
+            "category_id": "1709",
+            "category_url": "oral-care-products",
+            "commission": 10
+        },
+        {
+            "category_id": "8965",
+            "category_url": "baby-clothings-accessories",
+            "commission": 20
+        },
+        {
+            "category_id": "8972",
+            "category_url": "baby-girls-clothing-and-accessories",
+            "commission": 20
+        },
+        {
+            "category_id": "8970",
+            "category_url": "sets-packs",
+            "commission": 7.5
+        },
+        {
+            "category_id": "8966",
+            "category_url": "new-born-baby-clothing",
+            "commission": 17
+        },
+        {
+            "category_id": "9022",
+            "category_url": "baby-boys-clothing",
+            "commission": 17
+        },
+        {
+            "category_id": "9006",
+            "category_url": "baby-girls-shoes",
+            "commission": 17
+        },
+        {
+            "category_id": "9229",
+            "category_url": "sports-and-outdoor-play",
+            "commission": 12
+        },
+        {
+            "category_id": "8789",
+            "category_url": "mattresses-bedding",
+            "commission": 12
+        },
+        {
+            "category_id": "8754",
+            "category_url": "pacifiers-and-accessories",
+            "commission": 9
+        },
+        {
+            "category_id": "8749",
+            "category_url": "baby-utensils",
+            "commission": 12
+        },
+        {
+            "category_id": "9350",
+            "category_url": "remote-control-toys-and-play-vehicles",
+            "commission": 12
+        },
+        {
+            "category_id": "9352",
+            "category_url": "drones-and-accessories",
+            "commission": 7
+        },
+        {
+            "category_id": "8912",
+            "category_url": "swings-jumpers-bouncers",
+            "commission": 12
+        },
+        {
+            "category_id": "8898",
+            "category_url": "baby-toddler-strollers",
+            "commission": 12
+        },
+        {
+            "category_id": "10002765",
+            "category_url": "boys-bags",
+            "commission": 12
+        },
+        {
+            "category_id": "9088",
+            "category_url": "baby-toddler-toys-games",
+            "commission": 12
+        },
+        {
+            "category_id": "9172",
+            "category_url": "early-development-toys",
+            "commission": 12
+        },
+        {
+            "category_id": "9091",
+            "category_url": "bath-toys",
+            "commission": 20
+        },
+        {
+            "category_id": "9067",
+            "category_url": "toys-games",
+            "commission": 12
+        },
+        {
+            "category_id": "9216",
+            "category_url": "toys-puzzles",
+            "commission": 12
+        },
+        {
+            "category_id": "9204",
+            "category_url": "party-supplies",
+            "commission": 8.5
+        },
+        {
+            "category_id": "9170",
+            "category_url": "educational-toys-games",
+            "commission": 16.5
+        },
+        {
+            "category_id": "9158",
+            "category_url": "electronic-toys",
+            "commission": 12
+        },
+        {
+            "category_id": "9367",
+            "category_url": "traditional-games",
+            "commission": 12
+        },
+        {
+            "category_id": "9112",
+            "category_url": "dolls-accessories",
+            "commission": 10
+        },
+        {
+            "category_id": "9107",
+            "category_url": "blocks-building-toys-games",
+            "commission": 12
+        },
+        {
+            "category_id": "9073",
+            "category_url": "toys-arts-craft",
+            "commission": 18
+        },
+        {
+            "category_id": "9068",
+            "category_url": "toys-action-figures-collectibles",
+            "commission": 12
+        },
+        {
+            "category_id": "10002677",
+            "category_url": "baby-personal-care",
+            "commission": 12
+        },
+        {
+            "category_id": "10002687",
+            "category_url": "bath-tubs-seats",
+            "commission": 13.63
+        }
+    ]
+}

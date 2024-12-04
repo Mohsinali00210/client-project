@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+    const checkUserLoginStatus = async () => {
+        try {
+          const response = await fetch('http://127.0.0.1:8000/accounts/fetchDetail');
+          
+          // Check if the response is okay (status code 200-299)
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+      
+          const data = await response.json(); // Wait for JSON parsing to finish
+          console.log(data); // Now you can use `data` as expected
+      
+          // You can use the data here to check if the user is logged in or not
+          // Example: if(data.isLoggedIn) { ... }
+        } catch (error) {
+          console.error('There was a problem with the fetch operation:', error);
+        }
+      };
+      
+      // Call the function to check the login status
+      checkUserLoginStatus();
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  console.log(decodedCookie);
+  console.log(ca);
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("user_id");
+  let userId=localStorage.getItem('user_id');
+  console.log("userId= ",userId);
+  if (user != "") {
+
+    alert("Welcome again " + user);
+    console.log(user);
+  } else {
+     user = "12";
+     if (user != "" && user != null) {
+    console.log("empty");
+     }
+  }
+}
+</script>
+</head>
+
+<body onload="checkCookie()"></body>
+
+</html>

@@ -1,0 +1,54 @@
+ 
+ 
+ # chrome_options = Options()
+# chrome_options.add_argument("--headless")
+# chrome_options.add_argument("--disable-extensions")
+# # set chrome driver options to disable any popup's from the website
+# # to find local path for chrome profile, open chrome browser
+# # and in the address bar type, "chrome://version"
+# chrome_options.add_argument('disable-notifications')
+# chrome_options.add_argument('--disable-infobars')
+# chrome_options.add_argument('start-maximized')
+# # To disable the message, "Chrome is being controlled by automated test software"
+# chrome_options.add_argument("disable-infobars")
+# # Pass the argument 1 to allow and 2 to block
+# chrome_options.add_experimental_option("prefs", { 
+#     "profile.default_content_setting_values.notifications": 2
+#     })
+    
+# driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+
+ 
+ # product_list = []  # Initialize an empty list for products
+    # MinMaxPrice=""
+    # if price_max and price_min:
+    #     MinMaxPrice=f"{price_min}-{price_max}"
+    # messages=''
+    # products=''
+    # if keyword:
+    #     if(MinMaxPrice!=''):
+    #         products = main.shopping_online_run(driver=driver,location=origin,keyword=keyword,page="1",MinMaxPrice=MinMaxPrice)
+    #     else:
+    #         products = main.shopping_online_run(driver=driver,location=origin,keyword=keyword,page="1")
+    #     print(products)
+    #     messages='keyword if is exicuted'
+    # else:
+    #     products=main.shopping_online_run(driver=driver,location=origin,keyword='latest',page="1")
+    #     messages='keyword if is not exicuted'
+
+        # Split the input into lines and iterate over each line
+    # for product_info in products:  # Iterate over each product info from the generator
+    #     for line in product_info.strip().split('\n'):
+    #         if line:  # Check if the line is not empty
+    #             values = line.split(',')
+    #             product_dict = {
+    #                 "name": values[0].strip(),
+    #                 "price": values[1].strip(),
+    #                 "sold": values[2].strip(),
+    #                 "origin": values[3].strip(),
+    #                 "url": values[4].strip(),
+    #                 "image": values[5].strip(),
+    #                 "rating": values[6].strip(),
+    #             }
+    #             product_list.append(product_dict)  # Append the dictionary to the list
+  

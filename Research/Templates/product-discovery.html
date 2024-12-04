@@ -1,0 +1,808 @@
+{% extends 'base.html' %}
+{% block title %} Product Discovery {% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"/>
+<!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- DataTables CSS -->
+<link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<!-- DataTables Buttons CSS -->
+<link href="https://cdn.datatables.net/buttons/2.2.0/css/buttons.dataTables.min.css" rel="stylesheet">
+
+<!-- jQuery, DataTables JS, Buttons JS, PDF/Excel libraries -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.0/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+
+<!-- SheetJS (XLSX.js) library for Excel export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
+
+<style>
+    .ellipsis {
+        white-space: wrap;          /* Prevent text from wrapping */
+        overflow: hidden;             /* Hide any text that overflows the container */
+        text-overflow: ellipsis;      /* Add the ellipsis (...) */
+      }
+      .ProductTitle{
+        height:50px;
+      }
+      tbody,tbody a,tbody a p,tbody span{
+        font-size:13px !important;
+      }
+</style>
+<section>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Product Discovery</h3>
+        </div>
+        <div class="col-md-6">
+            <button onclick="showFilters()" class="btn btn-outline-primary" style="width:100px; float:right;">Filters</button>
+            <button onclick="downloadCSV()" class="btn btn-outline-primary" style="width:100px; float:right;">CSV</button>
+            <button onclick="downloadExcel()" class="btn btn-outline-primary" style="width:100px; float:right;">Excel</button>
+        </div>
+    </div>
+ 
+    <div id="FiltersDiv" style="display:none;">
+                
+        <form method="get" action="{% url 'search_products' %}">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-3">
+                <div class="mt-3 mb-3">
+                    <label for="Plateform" class="form-label mb-1">Platform :</label>
+                    <select id="Plateform" name="Plateform" onchange="OnPlatformChange()" required class="form-select">
+                        <option value="lazada" {% if request.GET.Plateform == 'lazada' %}selected{% endif %}>Lazada</option>
+                        <option value="daraz" {% if request.GET.Plateform == 'daraz' %}selected{% endif %}>Daraz</option>
+                        <option value="shopee" {% if request.GET.Plateform == 'shopee' %}selected{% endif %}>Shopee</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mt-3 mb-3">
+                    <label for="origin" class="form-label mb-1">Origin :</label>
+                    <select id="origin" name="origin" required class="form-select">
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+        <div class="col-3">
+            <div class="mt-3 mb-3">
+                <label for="category" class="form-label mb-1">Category :</label>
+                
+                <select id="category" name="category"  class="form-select">
+                    <option value="">Select Category</option>
+                        {% for category in categories %}
+                            <optgroup label="{{ category.categoryName }}">
+                            {% if 'level2TabList' in category %}
+                                {% for subCategory in category.level2TabList %}
+                                    <optgroup label="&nbsp;&nbsp;{{ subCategory.categoryName }}">
+                                        <option value="{{ subCategory.categoryUrl }}" {% if request.GET.category == subCategory.categoryUrl  %}selected{% endif %}>&nbsp;&nbsp;{{ subCategory.categoryName }}</option>
+                                        {% if 'level3TabList' in subCategory %}
+                                            {% for superSubCategory in subCategory.level3TabList %}
+                                                <option value="{{ superSubCategory.categoryUrl }}" {% if request.GET.category == superSubCategory.categoryUrl  %}selected{% endif %}>&nbsp;&nbsp;&nbsp;&nbsp;{{ superSubCategory.categoryName }}</option>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </optgroup>
+                                
+                                {% endfor %}
+                                </optgroup>
+                            {% endif %}
+                        {% endfor %}
+                        
+                    
+                </select>
+            </div>
+        </div>
+              
+          <div class="col-3">
+                <div class="mt-3 mb-3">
+                    <label for="brand" class="form-label mb-1">Brand :</label>
+                    
+                    <select id="brand" name="brand" {% if filterOptions %}{% else %}disabled{% endif %} class="form-select">
+                        <option value="">Select brand</option>
+                        {% if filterOptions %}
+                        {% for brand in filterOptions %}
+                            {% if brand.name == "brand" %}
+                                {% for option in brand.options %}
+                                    <option value="{{option.value}}" {% if request.GET.brand == option.value  %}selected{% endif %}>{{ option.title }}</option>
+
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                    <div class="mt-3 mb-3">
+                        <label for="location" class="form-label mb-1">location :</label>
+                        
+                        <select id="location" {% if filterOptions %}{% else %}disabled{% endif %} name="location"  class="form-select">
+                            <option value="">Select location</option>
+                            {% if filterOptions %}
+                            {% for location in filterOptions %}
+                                {% if location.name == "location" %}
+                                    {% for option in location.options %}
+                                        <option value="{{option.value}}" {% if request.GET.location == option.value  %}selected{% endif %}>{{ option.title }}</option>
+
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                        </select>
+                    </div>
+            </div>
+        
+
+
+
+        </div>
+
+
+        
+
+        <div class="row">
+        <div class="col-12">
+            <label for="searchProduct" class="form-label mb-1">Keyword :</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                <input id="searchProduct"  name="keyword" type="search" class="form-control" 
+                    placeholder="Enter product keyword" 
+                    value="{{ request.GET.keyword|default:'' }}">
+            </div>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col col-6">
+            <div class="mt-3">
+                <label for="productPriceMin" class="form-label mb-1">Price :</label>
+                <div class="input-group">
+                    <input id="productPriceMin" name="price_min" class="form-control" type="number" min="0" 
+                        placeholder="Min" value="{{ request.GET.price_min|default:'' }}">
+                    <span class="fs-3 mx-2">-</span>
+                    <input id="productPriceMax" name="price_max" class="form-control" type="number" min="0" 
+                        placeholder="Max" value="{{ request.GET.price_max|default:'' }}">
+                </div>
+            </div>
+            <div class="mt-3">
+                <label for="productRatingMin" class="form-label mb-1">Rating :</label>
+                <div class="input-group">
+                    <input id="productRatingMin" name="rating_min" class="form-control" type="number" min="0" 
+                        placeholder="Min" value="{{ request.GET.rating_min|default:'' }}">
+                    <span class="fs-3 mx-2">-</span>
+                    <input id="productRatingMax" name="rating_max" class="form-control" type="number" min="0" 
+                        placeholder="Max" value="{{ request.GET.rating_max|default:'' }}">
+                </div>
+            </div>
+        </div>
+
+        <div class="col col-6">
+            <div class="mt-3">
+                <label for="monthlyOrdersMin" class="form-label mb-1">Monthly Orders :</label>
+                <div class="input-group">
+                    <input id="monthlyOrdersMin" name="orders_min" class="form-control" type="number" min="0" 
+                        placeholder="Min" value="{{ request.GET.orders_min|default:'' }}">
+                    <span class="fs-3 mx-2">-</span>
+                    <input id="monthlyOrdersMax" name="orders_max" class="form-control" type="number" min="0" 
+                        placeholder="Max" value="{{ request.GET.orders_max|default:'' }}">
+                </div>
+            </div>
+            <div class="mt-3">
+                <label for="reviewsMin" class="form-label mb-1">Reviews :</label>
+                <div class="input-group">
+                    <input id="reviewsMin" name="reviews_min" class="form-control" type="number" min="0" 
+                        placeholder="Min" value="{{ request.GET.reviews_min|default:'' }}">
+                    <span class="fs-3 mx-2">-</span>
+                    <input id="reviewsMax" name="reviews_max" class="form-control" type="number" min="0" 
+                        placeholder="Max" value="{{ request.GET.reviews_max|default:'' }}">
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col col-6">
+            <div class="mt-3">
+                <label for="sort" class="form-label mb-1">Sort By :</label>
+                <select id="sort" name="sort" class="form-select">
+                    <option selected value="">Select any one</option>
+                    <option {% if request.GET.sort == "BestMatch" %}selected{% endif %} value="BestMatch">Best Match</option>
+                    <option {% if request.GET.sort == "order" %}selected{% endif %} value="order">Top Sale</option>
+                    <option {% if request.GET.sort == "new" %}selected{% endif %} value="new">Newest</option>
+                    <option {% if request.GET.sort == "priceasc" %}selected{% endif %} value="priceasc">Price low to high</option>
+                    <option {% if request.GET.sort == "pricedesc" %}selected{% endif %} value="pricedesc">Price high to low</option>
+                </select>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-12">
+            <div class="mt-3 d-flex gap-4">
+                <button type="submit" class="btn btn-primary">Search Products</button>
+                <button type="reset" class="btn btn-secondary">Reset Filters</button>
+            </div>
+        </div>
+        </div>
+        </form>
+
+    </div>
+    
+    
+
+    <div class="row">
+        <div class="col col-6 mt-auto">
+            <p class="fs-6 mb-0">Products Found: {{filteredQuatity}}</p>
+        </div>
+       
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if request.GET.category  %}
+                <div class="button-group">
+                    <button class="btn btn-outline-info">{{request.GET.category}}</button>
+                    <button class="btn btn-close" aria-label="Close" onclick="clearCategory()"></button>
+                </div>  
+            {% endif %}
+        </div>
+        <div class="col">
+            {% if request.GET.keyword  %}
+                <div class="button-group">
+                    <button class="btn btn-outline-info">{{request.GET.keyword}}</button>
+                    <button class="btn btn-close" aria-label="Close" onclick="clearKeyword()"></button>
+                </div>  
+            {% endif %}
+        </div>
+        <div class="col">
+            {% if request.GET.brand  %}
+                <div class="button-group">
+                    <button class="btn btn-outline-primary">{{request.GET.brand}}</button>
+                    <button class="btn btn-close" aria-label="Close" onclick="clearBrand()"></button>
+                </div>  
+            {% endif %}
+        </div>
+        <div class="col">
+            {% if request.GET.location %}
+                <div class="button-group">
+                    <button class="btn btn-outline-info">{{request.GET.location}}</button>
+                    <button class="btn btn-close" aria-label="Close" onclick="clearLocation()"></button>
+                </div>  
+            {% endif %}
+        </div>
+        <div class="col">
+            {% if request.GET.sort %}
+                <div class="button-group">
+                    <button class="btn btn-outline-danger">{{request.GET.sort}}</button>
+                    <button class="btn btn-close" aria-label="Close" onclick="clearSort()"></button>
+                </div>  
+            {% endif %}
+        </div>
+    </div>
+
+    <!------ Product detail cards ------>
+    <div class="row">
+        <div class="table-responsive">
+            <table id="example" class="table  table-striped-columns" style="width:100%; ">
+                <thead>
+                    <tr>
+                        <th colspan="2"> </th>
+                        <th colspan="4" class="text-center">Sold Units</th>
+                        <th colspan="4" class="text-center">Ravenue</th>
+                        <th colspan="4"></th>
+                        
+                    </tr>
+                    <tr>
+                        <th >Name</th>
+                        <th>Price</th>
+                        <th>Daily</th>
+                        <th>7 Days</th>
+                        <th>30 Days</th>
+                        <th>Life Time</th>
+                        <th>Daily</th>
+                        <th>7 Days</th>
+                        <th>30 Days</th>
+                        <th>Life Time</th>
+                        <th>Reviews</th>
+                        <th>Brand</th>
+                        <th>seller</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+    
+                    {% for product in products %}
+                    <tr>
+                        <td style="min-width:350px">
+                            <div class="row">
+                                <div class="col-md-3 ">
+                                    <img src="{{ product.image }}" id="productImage{{ forloop.counter0 }}" style="width:100%;" class="card-img-top productImage" alt="Product Image">
+                                </div>
+                                <div class="col-md-9">
+                                    <a href="{{ product.item_url }}" target="_blank" class=""  >
+                                        <p class="card-title  custom-card-title-style m-0 ProductName  ellipsis ProductTitle" id="ProductName{{ forloop.counter0 }}"  >{{ product.name }}</p>
+                                    </a>
+    
+                                    <span class="float-end text-bold"><strong id="productLocation{{ forloop.counter0 }}">Region: {{ product.location }}</strong></span>
+                                </div>
+                            </div>
+                            
+                        </td>
+                        <td><p class="mb-1 productPrice" id="productPrice{{ forloop.counter0 }}">{{ product.priceShow }}</p></td>
+                        <td>
+                            <span class="d-block  text-center productSoldDaily" id="productSoldDaily{{ forloop.counter0 }}">
+                                {{ product.volumePayOrdPrdQty1d }}
+                            </span>
+                            
+                        </td>
+                        <td>
+                            <span class="d-block  text-center productSoldWeekly" id="productSoldWeekly{{ forloop.counter0 }}" >{{product.volumePayOrdPrdQty1w|floatformat:0}}</span>
+                        </td>
+                        <td>
+                            <span class="d-block  text-center productSoldMonthly"id="productSoldMonthly{{ forloop.counter0 }}" >{{product.volumePayOrdPrdQty1m|floatformat:0}}</span>
+    
+                        </td>
+                        <td>
+                            <span class="d-block  text-center productSoldMonthly"id="productSold{{ forloop.counter0 }}" >{{product.volumePayOrdPrdQtyStd|floatformat:0}}</span>
+                        </td>
+                        
+                        <td>
+                            <span class="d-block  text-center productSoldDaily" id="productDailySales{{ forloop.counter0 }}">
+                                {{ product.volumePayOrdPrdSales1d|floatformat:0 }}
+                            </span>
+                            
+                        </td>
+                        <td>
+                            <span class="d-block  text-center productSoldWeekly" id="productWeeklySales{{ forloop.counter0 }}" >{{product.volumePayOrdPrdSales1w|floatformat:0}}</span>
+                        </td>
+                        <td>
+                            <span class="d-block  text-center productSoldMonthly"id="productMonthlySales{{ forloop.counter0 }}" >{{product.volumePayOrdPrdSales1m|floatformat:0}}</span>
+    
+                        </td>
+                        <td>
+                            <span class="d-block  text-center productSoldMonthly"id="productSales{{ forloop.counter0 }}" > {{product.volumePayOrdPrdSalesStd|floatformat:0}}</span>
+                        </td>
+                        <td><small><i class="bi bi-star-fill text-bronze"></i> <span class="productRating" id="productRating{{ forloop.counter0 }}"> {{product.rating|floatformat:1}}   ({{product.review|floatformat:2}})</span></small></td>
+                        <td id="brandName{{ forloop.counter0 }}">{{product.brandName}}</td>
+                        <td id="sellerName{{ forloop.counter0 }}">{{product.sellerName}}</td>
+                        <td>                
+                            <button type="button" onclick="popup(this)" id='{{ forloop.counter0 }}' class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#productView">Quick View</button>
+                            <a href="{{ product.item_url }}" target="_blank" class="btn btn-outline-secondary btn-sm">Product Details</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th >Name</th>
+                        <th>Price</th>
+                        <th>Daily</th>
+                        <th>7 Days</th>
+                        <th>30 Days</th>
+                        <th>Life Time</th>
+                        <th>Daily</th>
+                        <th>7 Days</th>
+                        <th>30 Days</th>
+                        <th>Life Time</th>
+                        <th>Reviews</th>
+                        <th>Brand</th>
+                        <th>seller</th>
+                        <th>Action</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+    </div>
+    <div class="my-3 d-flex gap-2 flex-wrap justify-content-between">
+
+
+
+        {% if products %}
+        <script>
+          function popup(index) {
+            console.log(index.id);
+        
+        var productNames = document.getElementById('ProductName'+index.id);
+        var productSoldWeekly = document.getElementById('productSoldWeekly'+index.id);
+        var productSoldMonthly = document.getElementById('productSoldMonthly'+index.id);
+        var productSold = document.getElementById('productSoldDaily'+index.id);
+        var productPrice = document.getElementById('productPrice'+index.id);
+        var sellerName = document.getElementById('sellerName'+index.id);
+        var brandName = document.getElementById('brandName'+index.id);
+        var PrdPrice =parseInt(productPrice.innerText.replace("Rs. ","").replace("RM","").replace(",",""), 10);
+        var productRavenueWeekly = parseInt(productSoldWeekly.innerText, 10) * PrdPrice;
+        var productRavenueMonthly = parseInt(productSoldMonthly.innerText, 10) * PrdPrice;
+        var productRavenueDaily = parseInt(productSold.innerText, 10) * PrdPrice;
+
+        var productRating = document.getElementById('productRating'+index.id);
+        var productOrigin = document.getElementById('productLocation'+index.id);
+        var productImage = document.getElementById('productImage'+index.id);
+        
+        console.log(productImage.src);
+        document.getElementById('allOrderpop').innerHTML=productSold.innerText;
+        document.getElementById('monthlyOrderpop').innerHTML=productSoldMonthly.innerText;
+        document.getElementById('weeklyOrderpop').innerHTML=productSoldWeekly.innerText;
+        document.getElementById('weeklyRevenuepop').innerHTML=productRavenueWeekly;
+        document.getElementById('monthlyRevenuepop').innerHTML=productRavenueMonthly;
+        document.getElementById('productRavenueDaily').innerHTML=productRavenueDaily;
+        document.getElementById('productNamepop').innerHTML=productNames.innerText;
+        document.getElementById('pricepop').innerHTML=productRating.innerText;
+        document.getElementById('ratingpop').innerHTML=productPrice.innerText;
+        document.getElementById('originpop').innerHTML=productOrigin.innerText;
+        document.getElementById('imagePop').src=productImage.src;
+        // Display the product name in mydiv
+        if (productNames[index.id]) { // Ensure the index is valid
+            document.getElementById('mydiv').innerHTML = productNames.innerText;
+        } else {
+            document.getElementById('mydiv').innerHTML = 'Product not found';
+        }
+    }
+        </script>
+
+
+
+        {% for product in products %}
+
+       
+        {% endfor %}
+
+        {% else %}
+        <p>No products found.</p>
+        {% endif %}
+
+    </div>
+
+
+    <!-- Product Quick View Modal -->
+
+    <div class="modal fade" id="productView" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-6">Quick view</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-cols-2">
+                        <div class="col">
+                            <img src="./assets/images/products/01.png" id="imagePop" width="200px" height="200px" class="img-fluid"
+                                alt="Product Image">
+                        </div>
+                        <div class="col my-auto">
+                            <h1 class="h4" id="productNamepop">Product Name</h1>
+                            <p><i class="bi bi-star-fill text-bronze" ></i> 96% Positive Seller
+                                <span id="ratingpop"></span></p>
+                            <h4 class="text-primary fw-bold" id="pricepop">Rs. 120</h4>
+                            <small class="d-block"><span class="fw-semibold " id="originpop"> PK</span></small>
+                        </div>
+                    </div>
+                    <small class="text-secondary mx-1">Last Checked: 21 hours ago</small>
+                    <div class="row gap-3 mx-0 mx-md-1 mt-1 mb-3">
+                        <div class="col p-3 rounded bg-secondary bg-opacity-10">
+                            <span class="fw-semibold lead d-block text-center" id="allOrderpop">000</span>
+                            <span class="d-block text-center">Last Daily Orders</span>
+                        </div>
+                        <div class="col p-3 rounded bg-secondary bg-opacity-10">
+                            <span class="fw-semibold lead d-block text-center" id="weeklyOrderpop">000</span>
+                            <span class="d-block text-center">Last Weekly Orders</span>
+                        </div>
+                        <div class="col p-3 rounded bg-secondary bg-opacity-10">
+                            <span class="fw-semibold lead d-block text-center" id="monthlyOrderpop">000</span>
+                            <span class="d-block text-center">Last Monthly Orders</span>
+                        </div>
+                    </div>
+                    <div class="row gap-3 mx-0 mx-md-1 my-3">
+                        <div class="col p-3 rounded bg-secondary bg-opacity-10">
+                            <span class="fw-semibold lead d-block text-center" id="productRavenueDaily">000</span>
+                            <span class="d-block text-center">Last Day Revenue</span>
+                        </div>
+                        <div class="col p-3 rounded bg-secondary bg-opacity-10">
+                            <span class="fw-semibold lead d-block text-center" id="weeklyRevenuepop">000</span>
+                            <span class="d-block text-center">Last Weekly Revenue</span>
+                        </div>
+                        <div class="col p-3 rounded bg-secondary bg-opacity-10">
+                            <span class="fw-semibold lead d-block text-center" id="monthlyRevenuepop">000</span>
+                            <span class="d-block text-center">Last Monthly Revenue</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary btn-sm"
+                            data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary btn-sm">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Quick View Modal -->
+
+    </div>
+
+
+
+    <!------ Product detail cards ------>
+
+    <div class="d-flex justify-content-end">
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% for p in PageNum %}
+            <li class="page-item">
+                <a class="page-link" onclick="pagenumber(this.innerText)" href="{% url 'search_products' %}?page={{ p }}&keyword={{ request.GET.keyword }}&price_min={{ request.GET.price_min }}&price_max={{ request.GET.price_max }}&rating_min={{ request.GET.rating_min }}&rating_max={{ request.GET.rating_max }}&orders_min={{ request.GET.orders_min }}&orders_max={{ request.GET.orders.max }}&reviews_min={{ request.GET.reviews_min }}&reviews_max={{ request.GET.reviews.max }}&origin={{ request.GET.origin }}">
+                    {{ p }}
+                </a>
+            </li>
+        {% empty %}
+            <li>No pages available.</li>
+        {% endfor %}
+                
+               
+            </ul>
+        </nav>
+    </div>
+
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+
+{% if lazadaCategories %}
+    <script>
+        var LZCategories = {{ lazadaCategories|safe }};
+        var DZCategories = {{ categories|safe }};
+
+    </script>
+{% endif %}
+<script>
+    var selectElement = document.getElementById("category");
+    var Plt=document.getElementById('Plateform');
+    var org=document.getElementById('origin');
+    var DarazOrigins = {
+        "pk": "Pakistan",
+        "np": "Nepal",
+        "bd": "Bangladesh",
+        "lk": "Sri Lanka"
+    };
+    
+    var LazadaOrigins = {
+        "com.my": "Malaysia",
+        "com.ph": "Philippines",
+        "co.id": "Indonesia",
+        "co.th": "Thailand",
+        "sg": "Singapore"
+    };
+// #region clear filter
+    function clearCategory() {
+        const url = new URL(window.location.href);
+        url.searchParams.delete('category'); // Remove 'category' parameter
+        window.location.href = url.toString(); // Reload page with updated URL
+    }
+    function clearKeyword() {
+        const url = new URL(window.location.href);
+        url.searchParams.delete('keyword'); // Remove 'category' parameter
+        window.location.href = url.toString(); // Reload page with updated URL
+    }
+    function clearSort() {
+        const url = new URL(window.location.href);
+        url.searchParams.delete('sort'); // Remove 'category' parameter
+        window.location.href = url.toString(); // Reload page with updated URL
+    }
+    function clearLocation() {
+        const url = new URL(window.location.href);
+        url.searchParams.delete('location'); // Remove 'category' parameter
+        window.location.href = url.toString(); // Reload page with updated URL
+    }
+    function clearBrand() {
+        const url = new URL(window.location.href);
+        url.searchParams.delete('brand'); // Remove 'category' parameter
+        window.location.href = url.toString(); // Reload page with updated URL
+    }
+// $endregion
+// #region fill Drop downs
+
+    function fillOrigin(Origins){
+        for (var key in Origins) {
+            if (Origins.hasOwnProperty(key)) {  // Check if the property belongs to the object
+                var value = Origins[key];
+                let opt=`<option value="`+key+`" {% if request.GET.origin == '`+key+`' %}selected{% endif %}>`+value+`</option>`;
+                org.innerHTML+=opt;
+                console.log(opt);
+            }
+        }
+    }
+    if (new URLSearchParams(window.location.search).get('Plateform') =='daraz') {
+        fillCategory(selectElement,DZCategories);
+        fillOrigin(DarazOrigins)
+    }
+    else if (new URLSearchParams(window.location.search).get('Plateform') =='lazada'){
+        fillCategory(selectElement,LZCategories);
+        fillOrigin(LazadaOrigins)
+    }
+    var FilterToggle=false;
+    var filterElement=document.getElementById("FiltersDiv");
+    
+    function fillCategory(selectElement,Categories){
+        selectElement.innerHTML="";
+                var OOPT = document.createElement("option");
+            OOPT.textContent = "select Category";
+            OOPT.value="";
+            selectElement.appendChild(OOPT);
+                // Loop through categories and generate the optgroups and options dynamically
+                Categories.forEach(function(category) {
+                    // Create the <optgroup> for the main category
+                        // var optGroup = document.createElement("optgroup");
+                        // optGroup.setAttribute("label", category.categoryName);
+                    
+                    // Check if 'level2TabList' exists and loop through subcategories
+                    if (category.level2TabList) {
+                        category.level2TabList.forEach(function(subCategory) {
+                            // Create the <optgroup> for the subcategory (indented)
+                                // var subOptGroup = document.createElement("optgroup");
+                                // subOptGroup.setAttribute("label", "\u00A0\u00A0" + subCategory.categoryName); // \u00A0 is non-breaking space
+                                
+                                // Create the <option> for the subcategory
+                                    var subOption = document.createElement("option");
+                                    subOption.setAttribute("value", subCategory.categoryUrl);
+                                    subOption.textContent = "\u00A0\u00A0" + subCategory.categoryName;
+                                    
+                            // Mark as selected if the category is the current selected category (you can compare with URL params)
+                            if (new URLSearchParams(window.location.search).get('category') === subCategory.categoryUrl) {
+                                subOption.selected = true;
+                            }
+        
+                            selectElement.appendChild(subOption);
+                            
+                            // Check if 'level3TabList' exists and loop through super subcategories
+                            if (subCategory.level3TabList) {
+                                subCategory.level3TabList.forEach(function(superSubCategory) {
+                                    
+                                    var superSubOption = document.createElement("option");
+                                    superSubOption.setAttribute("value", superSubCategory.categoryUrl);
+                                    superSubOption.textContent = "\u00A0\u00A0\u00A0\u00A0" + superSubCategory.categoryName;
+                                    
+                                    // Mark as selected if the super subcategory is the current selected category
+                                    if (new URLSearchParams(window.location.search).get('category') === superSubCategory.categoryUrl) {
+                                        superSubOption.selected = true;
+                                    }
+                                    
+                                    selectElement.appendChild(superSubOption);
+                                });
+                            }
+                            
+                            // optGroup.appendChild(subOptGroup);
+                        });
+                    }
+                    
+                    // selectElement.appendChild(optGroup);
+                    // Append the optGroup to the select element
+                });
+    }
+    function OnPlatformChange(){
+        
+        console.log(Plt);
+        org.innerHTML="";
+        
+        if(Plt.value=='daraz'){
+            if (new URLSearchParams(window.location.search).get('Plateform') !='daraz') {
+                document.getElementById('brand').disabled = true;
+                document.getElementById('location').disabled = true;
+                document.getElementById('brand').selectedIndex = 0;  // Unselect option in brand
+                document.getElementById('location').selectedIndex = 0;
+            }
+            
+            for (var key in DarazOrigins) {
+                if (DarazOrigins.hasOwnProperty(key)) {  // Check if the property belongs to the object
+                    var value = DarazOrigins[key];
+                    let opt=`<option value="`+key+`" {% if request.GET.origin == '`+key+`' %}selected{% endif %}>`+value+`</option>`;
+                    console.log(opt);
+                    org.innerHTML+=opt;
+                }
+            }
+            fillCategory(selectElement,DZCategories)
+        }else if(Plt.value=='lazada'){
+            if (new URLSearchParams(window.location.search).get('Plateform') !='lazada') {
+                document.getElementById('brand').disabled = true;
+                document.getElementById('location').disabled = true;
+                document.getElementById('brand').selectedIndex = 0;  // Unselect option in brand
+                document.getElementById('location').selectedIndex = 0;
+            }
+            for (var key in LazadaOrigins) {
+                if (LazadaOrigins.hasOwnProperty(key)) {  // Check if the property belongs to the object
+                    var value = LazadaOrigins[key];
+                    let opt=`<option value="`+key+`" {% if request.GET.origin == '`+key+`' %}selected{% endif %}>`+value+`</option>`;
+                    console.log(opt);
+                    org.innerHTML+=opt;
+                }
+            }
+            fillCategory(selectElement,LZCategories)
+        }
+    }
+// $endregion
+// #region filter toggle
+    function showFilters(){
+        if(FilterToggle){
+            FilterToggle=false;
+            filterElement.style.display="inline-block";
+            console.log("toggle "+FilterToggle);
+        }
+        else{
+            filterElement.style.display="none";
+            FilterToggle=true;
+            console.log("toggle "+FilterToggle);
+        }
+    }
+// $endregion
+// #region download csv
+    function downloadCSV() {
+        // Get the table element
+        let table = document.getElementById('example');
+        
+        // Initialize a string for the CSV data
+        let csvData = '';
+        
+        // Get the header row and add it to the CSV data
+        let headers = table.querySelectorAll('thead th');
+        let headerRow = [];
+        headers.forEach(function(header) {
+            headerRow.push(header.innerText.trim());
+        });
+        csvData += headerRow.join(',') ; // Join header values with a semicolon and add a newline
+    
+        // Loop through all the rows and extract the data
+        let rows = table.querySelectorAll('tbody tr');
+        rows.forEach(function(row) {
+            let rowData = [];
+            let cells = row.querySelectorAll('td');
+            
+            cells.forEach(function(cell, index) {
+                // Check if the cell contains an image or other complex HTML elements
+                let cellText = cell.innerText.trim();
+                rowData.push(cellText);
+            });
+            
+            // Add the row to the CSV string, joining cell values with semicolon and adding a newline
+            csvData += rowData.join(',');
+        });
+    
+        // Create a Blob from the CSV string
+        let blob = new Blob([csvData], { type: 'text/csv;charset=utf-8' });
+    
+        // Use the FileSaver.js library to trigger the download
+        saveAs(blob, 'product_data.csv');
+    }
+    function downloadExcel() {
+        // Get the table element
+        let table = document.getElementById('example');
+
+        // Convert the table to a workbook
+        let wb = XLSX.utils.table_to_book(table, {sheet: "Sheet 1"});
+
+        // Write the workbook to an array
+        let wbout = XLSX.write(wb, {bookType: 'xlsx', type: 'array'});
+
+        // Create a Blob object to save the file
+        let blob = new Blob([wbout], {type: 'application/octet-stream'});
+
+        // Use the FileSaver.js library to trigger the download
+        saveAs(blob, 'product_data.xlsx');
+    }
+// $endregion
+    new DataTable('#example');
+    
+</script>
+{% endblock %}
